@@ -52,7 +52,7 @@ const floor = new THREE.Mesh(new THREE.CircleGeometry(3, 64), new THREE.MeshStan
 floor.rotation.x = -Math.PI/2; floor.receiveShadow = true; scene.add(floor);
 
 const camera = new THREE.PerspectiveCamera(38, 1, 0.05, 50);
-const home = { pos:new THREE.Vector3(0, 1.05, 4.0), tgt:new THREE.Vector3(0, 0.85, 0) };
+const home = { pos:new THREE.Vector3(0, 1.1, 4.9), tgt:new THREE.Vector3(0, 0.85, 0) };
 camera.position.copy(home.pos);
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.target.copy(home.tgt); controls.enableDamping = true; controls.dampingFactor = 0.09;
