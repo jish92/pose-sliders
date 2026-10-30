@@ -4,7 +4,7 @@ Mobile-friendly three.js pose viewer. Five sliders, each labelled under its pose
 
 | Slider | What it does |
 | --- | --- |
-| Deep squat | garland pose, feet planted, hips low, torso upright |
+| Deep squat | natural full squat: feet about shoulder width, heels flat, torso leaning forward about 25°, hands clasped at the chest |
 | Wider stance | feet apart |
 | Bend and touch toes | forward fold |
 | Running: bust bounce | amplitude of a looping bust bounce |
