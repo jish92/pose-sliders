@@ -13,7 +13,7 @@ const SLIDERS = [
   { id:'glute',  label:'Running: glute motion',    sub:'amplitude' },
 ];
 const val = { squat:0, stance:0, bend:0, bust:0, glute:0 };
-let running = true;
+let running = false;   // Run defaults to off; amplitude 0 never moves anything
 
 const rows = document.getElementById('rows');
 for (const s of SLIDERS) {
@@ -135,4 +135,4 @@ renderer.setAnimationLoop(() => {
 window.__app = { val, scene, camera, controls, bones, model, setVals(o){ for (const s of SLIDERS) if (o[s.id] !== undefined) { s.inp.value = o[s.id]; s.upd(); } }, setRun(r){ running = r; } };
 // optional presets via URL hash, e.g. #squat=1&stance=0.5&run=0
 { const h = new URLSearchParams(location.hash.slice(1)); const o = {}; for (const s of SLIDERS) if (h.has(s.id)) o[s.id] = Math.min(1, Math.max(0, +h.get(s.id) || 0));
-  window.__app.setVals(o); if (h.get('run') === '0' && running) runBtn.click(); if (h.get('panel') === '0') panel.classList.add('min'); }
+  window.__app.setVals(o); if (h.get('run') === '1' && !running) runBtn.click(); if (h.get('run') === '0' && running) runBtn.click(); if (h.get('panel') === '0') panel.classList.add('min'); }
